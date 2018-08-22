@@ -1,0 +1,53 @@
+<div class="container" style="margin-top: 16%; margin-bottom: 18%;">
+  <h5>Add Recipe</h5>
+
+  <form novalidate [formGroup]="myform" (submit)="onSubmit()">
+    <div class="form-group row">
+      <br>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label" for="recipeName"><strong>Recipe Name :</strong></label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" formControlName="name" style="border: 2px solid black;">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label" for="ingredient1">Incredient 1 :</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" formControlName="ingredient1">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label" for="ingredient2">Incredient 2 :</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" formControlName="ingredient2">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label" for="ingredient3">Incredient 3 :</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" formControlName="ingredient3">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-4 col-form-label" for="ingredient4">Incredient 4 :</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" formControlName="ingredient4">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <br>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-5 text-right">
+        <button type="submit" class="btn">Submit</button>
+      </div>
+      <div class="col-sm-2">
+        <button type="button" class="btn">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>
