@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -39,8 +38,7 @@ public class RecipeController {
 
   @PostMapping("/addRecipe")
   public Recipe addRecipe(@Valid @RequestBody Recipe recipe) {
-    Optional<Recipe> oldRecipe = recipeRepository.findByName(recipe.getName());
-    if (oldRecipe.isPresent()) recipeRepository.delete(oldRecipe.get());
+    recipeRepository.findByName(recipe.getName()).ifPresent(recipe1 -> recipeRepository.delete(recipe1));
 
     return recipeRepository.save(recipe);
   }
