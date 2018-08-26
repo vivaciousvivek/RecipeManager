@@ -2,6 +2,9 @@ import { Component, ViewContainerRef } from '@angular/core';
 import { RecipeService } from './recipe/shared/recipe.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { ToastsManager } from 'ng6-toastr/ng2-toastr';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +15,12 @@ export class AppComponent {
   private title = 'Recipe Manager';
   private recipeNames: string[] = [];
 
-  constructor(private router: Router, private recipeService: RecipeService,
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches)
+    );
+
+  constructor(private breakpointObserver: BreakpointObserver, private router: Router, private recipeService: RecipeService,
     public toastr: ToastsManager, vcr: ViewContainerRef) {
     this.toastr.setRootViewContainerRef(vcr);
 

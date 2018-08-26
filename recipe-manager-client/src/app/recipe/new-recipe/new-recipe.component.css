@@ -1,4 +1,23 @@
-button {
-    background-color: #5285d3;
-    color: white !important;
+.heading-text {
+    color: #3a30c5;
+    margin-left: 30%;
+}
+
+.text-field {
+    width: 500px;
+}
+
+.button-row button,
+.button-row a {
+  margin-right: 16px;
+}
+
+.my-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.content-center {
+    margin: 10%;
 }

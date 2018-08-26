@@ -1,24 +1,13 @@
-.rounded-corner {
-    border-radius: 25px;
-    border: 2px solid #5285d3;
-    padding-top: 20px;
-    padding-left: 0px;
-    padding-right: 0px;
+.sidenav-container {
+    height: 100%;
 }
 
-.border-line {
-    border: 2px solid #5285d3;
+.sidenav {
+    width: 300px;
 }
 
-.anchor-boader {
-    border-radius: 6px;
-    border: 2px solid #5285d3;
+.mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
 }
 
-.heading-text {
-    color: #5285d3;
-}
-
-/* .container {
-    min-height: 600px;
-} */

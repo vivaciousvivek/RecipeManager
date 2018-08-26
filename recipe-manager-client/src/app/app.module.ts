@@ -7,6 +7,8 @@ import { RecipeModule } from './recipe/recipe.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastModule } from 'ng6-toastr/ng2-toastr';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,13 @@ import { ToastModule } from 'ng6-toastr/ng2-toastr';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatSelectModule,
     ToastModule.forRoot(),
     HttpClientModule,
     RecipeModule,

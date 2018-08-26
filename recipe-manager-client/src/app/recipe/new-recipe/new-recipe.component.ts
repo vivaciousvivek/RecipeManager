@@ -46,7 +46,7 @@ export class NewRecipeComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.name != null && (this.ingredient1.value || this.ingredient2.value || this.ingredient3.value || this.ingredient4.value)) {
+    if (this.name.value && (this.ingredient1.value || this.ingredient2.value || this.ingredient3.value || this.ingredient4.value)) {
       console.log('Recipe is Submitted!');
       console.log(this.myform.value);
       this.recipe = {

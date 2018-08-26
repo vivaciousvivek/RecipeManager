@@ -1,0 +1,12 @@
+.content-center {
+    margin: 10%;
+}
+
+.example-card {
+    max-width: 800px;
+}
+  
+.example-header-image {
+    background-image: url('../../../assets/images/recipe1.png');
+    background-size: cover;
+}

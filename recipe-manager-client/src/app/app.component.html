@@ -1,28 +1,31 @@
-<div class="container rounded-corner">
-  <div class="col-md-12 border-line border-right-0 border-left-0 border-top-0">
-    <h1 class="text-center heading-text">{{title}}</h1>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4 heading-text border-line border-left-0 border-bottom-0 border-top-0">
-      <div class="col-md-12" style="margin-top: 30px;">
-        <select class="col-md-12 border-line" (change)="getRecipeDetails($event.target.value)" style="height: 50px;">
-          <option value="0">Recipe List</option>
-          <option *ngFor="let name of recipeNames" value="{{name}}">{{name}}</option>
-        </select>
-      </div>
-
-      <div class="form-group"><br></div>
-      <div class="form-group">
-        <div class="col-md-12">
-          <a class="heading-text anchor-boader" [routerLink]="['new-recipe']" style="padding-top: 10px; padding-left: 120px; padding-right: 120px; padding-bottom: 10px;">Add
-            Recipe</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-8 text-center">
+<div class="container">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+      <mat-toolbar color="primary">Menu</mat-toolbar>
+      <mat-nav-list>
+        <br>
+        <a mat-list-item>
+          <mat-form-field>
+            <mat-select placeholder="Recipe List" (selectionChange)="getRecipeDetails($event.value)">
+              <mat-option *ngFor="let name of recipeNames" [value]="name">{{name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </a>
+        <br>
+        <a mat-list-item [routerLink]="['new-recipe']">Add Recipe</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span>{{title}}</span>
+      </mat-toolbar>
+      <!-- Add Content Here -->
       <router-outlet></router-outlet>
-    </div>
-  </div>
+      <p class="text-center">&copy; 2018 Monsanto Copyright</p>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
