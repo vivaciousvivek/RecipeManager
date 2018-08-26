@@ -38,7 +38,7 @@ public class RecipeControllerTest {
   public void getRecipeDetails_ShouldBeNotFound() {
     webTestClient
         .get()
-        .uri(baseUrl + "{recipeName}", "Recipe 11")
+        .uri(baseUrl + "/{recipeName}", "Recipe 11")
         .exchange()
         .expectStatus()
         .isNotFound();
