@@ -1,7 +1,7 @@
 # RecipeManager
 Repository for Monsanto Assignment.
 
-# Application Flow
+## Application Flow
 
 1. Welcome Page
 <img src="images/Picture1.png">
