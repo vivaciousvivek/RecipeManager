@@ -1,6 +1,12 @@
 # RecipeManager
 Repository for Monsanto Assignment.
 
+## Documentation of Backend Api Using Swagger
+
+Go to this link to see all REST APIs and Models of this application
+
+<img src="images/swagger-api.png">
+
 ## Application Flow
 
 1. Welcome Page
